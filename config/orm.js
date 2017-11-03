@@ -1,4 +1,26 @@
 var connection = require("./connection.js");
+
+function printQuestionMarks(num) {
+	var arr = [];
+
+	for (var i = 0; i < num; i++) {
+		arr.push("?");
+	}
+
+	return arr.toString();
+}
+
+// Helper function for generating My SQL syntax
+function objToSql(ob) {
+	var arr = [];
+
+	for (var key in ob) {
+		arr.push(key + "=" + ob[key]);
+	}
+
+	return arr.toString();
+}
+
 // Object Relational Mapper (ORM)
 var orm = {
 	// Function that returns all table entries
